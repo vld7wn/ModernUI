@@ -1,0 +1,511 @@
+﻿<Window x:Class="ModernUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="DashBoard" Height="500" Width="1200"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#181735">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#0F0F2D"
+              Grid.ColumnSpan="2"
+              MouseDown="Grid_MouseDown">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="BunnyCo"
+                       Foreground="White"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Fonts/#Dosis"
+                       FontWeight="Normal"/>
+            
+            <TextBlock Text="Website"
+                       Foreground="LightGray"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Fonts/#Dosis"/>
+
+            <!--#Close-->
+            <Button Content="Close"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Margin="0,0,0,0"
+                        Grid.Column="21"
+                        Grid.ColumnSpan="1" Click="btnClose_Click" 
+                    AutomationProperties.Name="btnClose" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#FF0356C5"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF0E0486"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="40" Height="15"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <!--#Minimized-->
+            <Button Content="Minimized"
+                    Foreground="White"
+                    FontSize="12"
+                    Margin="40,0,0,0"
+                    Grid.Column="19"
+                    FontWeight="Medium"
+                    Grid.ColumnSpan="2"
+                    Click="btnMinimized_Click"
+                    AutomationProperties.Name="btnMinimized" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#FF0356C5"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF0E0486"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="60" Height="15"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+
+        </Grid>
+
+        <StackPanel Grid.Row="1"
+                    VerticalAlignment="Center"
+                    Margin="60">
+
+            <StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,0,0,20">
+                    <Image Width="50" Height="50"
+                           Source="Assets/Images/rocket.png"
+                           RenderOptions.BitmapScalingMode="Fant"/>
+                    <TextBlock Text="ModernUI"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Dosis"
+                               Margin="10,0,0,0">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX=".5"/>
+                                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                        <RotateTransform Angle="10" CenterX="0.2" CenterY="0.5"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="#FFCB57F9" Offset="1"/>
+                                <GradientStop Color="#FF59CEFF" Offset="0.317"/>
+                                <GradientStop Color="#FF7866F9" Offset="0.615"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </StackPanel>
+
+                <TextBlock Text="Profile"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                           Margin="0,0,0,0">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <LinearGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop Color="#FFCB57F9" Offset="1"/>
+                            <GradientStop Color="#FF59CEFF" Offset="0"/>
+                            <GradientStop Color="#FF7866F9" Offset="0.68"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+                </TextBlock>
+
+                <TextBlock Text="Bord"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                           Margin="20,10,0,0">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <LinearGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop Color="#FFCB57F9" Offset="1"/>
+                            <GradientStop Color="#FF59CEFF" Offset="0"/>
+                            <GradientStop Color="#FF7866F9" Offset="0.643"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+
+
+                </TextBlock>
+
+                <TextBlock Text="Settings"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                           Margin="40,10,0,0">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <LinearGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="45" CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop Color="#FFCB57F9" Offset="1"/>
+                            <GradientStop Color="#FF59CEFF" Offset="0"/>
+                            <GradientStop Color="#FF7866F9" Offset="0.49"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+                </TextBlock>
+
+                <TextBlock Text="More text for your apps reglamentetionMore text for your apps reglamentetionMore text for your apps reglamentetion"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                           TextWrapping="Wrap"
+                           Margin="0,10,0,0" Foreground="#FF7DF1F9"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,15,0,0">
+                <Button Content="Start"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        Margin="0,0,10,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                            <Setter Property="Background" Value="#FF0356C5"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF0E0486"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="25"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+
+                <Button Content="Register"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                            <Setter Property="Background" Value="#FF3C3A63"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF100E3A"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="25"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+
+        <Grid Grid.Column="1"
+              Grid.RowSpan="1"
+              Margin="160,-365,-610,85"
+              Panel.ZIndex="-1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="251*"/>
+                <ColumnDefinition Width="274*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RenderTransform>
+                <RotateTransform Angle="50"/>
+            </Grid.RenderTransform>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="-350,250,-255,-250" Grid.ColumnSpan="2">
+
+                <StackPanel>
+                    <Border Width="700"
+                        Height="25"
+                        Margin="150,0,0,0"
+                        CornerRadius="20">
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BrushBorder1" Color="#FF64FFDF"/>
+                        </Border.Background>
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="Border.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color"
+                                                                      Storyboard.TargetName="BrushBorder1"
+                                                                      Duration="0:0:4"
+                                                                      FillBehavior="Stop"
+                                                                      RepeatBehavior="Forever">
+                                            <ColorAnimationUsingKeyFrames.KeyFrames>
+                                                <LinearColorKeyFrame KeyTime="0:0:1.5" Value="#FF612386"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:2.5" Value="#383660"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:3.5" Value="#FF64FFDF"/>
+                                            </ColorAnimationUsingKeyFrames.KeyFrames>
+
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+
+                    <Border Width="700"
+                        Height="25"
+                        Margin="0,15,0,0"
+                        CornerRadius="20">
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BrushBorder2" Color="#383660"/>
+                        </Border.Background>
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="Border.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color"
+                                                                      Storyboard.TargetName="BrushBorder2"
+                                                                      Duration="0:0:4"
+                                                                      FillBehavior="Stop"
+                                                                      RepeatBehavior="Forever">
+                                            <ColorAnimationUsingKeyFrames.KeyFrames>
+                                                <LinearColorKeyFrame KeyTime="0:0:1.5" Value="#FF64FFDF"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:2.5" Value="#FF612386"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:3.5" Value="#383660"/>
+                                            </ColorAnimationUsingKeyFrames.KeyFrames>
+
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+
+                    <Border Width="700"
+                        Height="25"
+                        Margin="75,15,0,0"
+                        CornerRadius="20">
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BrushBorder3" Color="#FF612386"/>
+                        </Border.Background>
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="Border.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color"
+                                                                      Storyboard.TargetName="BrushBorder3"
+                                                                      Duration="0:0:4"
+                                                                      FillBehavior="Stop"
+                                                                      RepeatBehavior="Forever">
+                                            <ColorAnimationUsingKeyFrames.KeyFrames>
+                                                <LinearColorKeyFrame KeyTime="0:0:1.5" Value="#383660"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:2.5" Value="#FF64FFDF"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:3.5" Value="#FF612386"/>
+                                            </ColorAnimationUsingKeyFrames.KeyFrames>
+
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel>
+                    <Border Width="700"
+                        Height="25"
+                        Margin="150,0,0,0"
+                        CornerRadius="20">
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BrushBorder3_2" Color="#FF612386"/>
+                        </Border.Background>
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="Border.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color"
+                                                                      Storyboard.TargetName="BrushBorder3_2"
+                                                                      Duration="0:0:4"
+                                                                      FillBehavior="Stop"
+                                                                      RepeatBehavior="Forever">
+                                            <ColorAnimationUsingKeyFrames.KeyFrames>
+                                                <LinearColorKeyFrame KeyTime="0:0:1.5" Value="#383660"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:2.5" Value="#FF64FFDF"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:3.5" Value="#FF612386"/>
+                                            </ColorAnimationUsingKeyFrames.KeyFrames>
+
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+
+                    <Border Width="700"
+                        Height="25"
+                        Margin="0,15,0,0"
+                        CornerRadius="20">
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BrushBorder1_2" Color="#FF64FFDF"/>
+                        </Border.Background>
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="Border.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color"
+                                                                      Storyboard.TargetName="BrushBorder1_2"
+                                                                      Duration="0:0:4"
+                                                                      FillBehavior="Stop"
+                                                                      RepeatBehavior="Forever">
+                                            <ColorAnimationUsingKeyFrames.KeyFrames>
+                                                <LinearColorKeyFrame KeyTime="0:0:1.5" Value="#FF612386"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:2.5" Value="#383660"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:3.5" Value="#FF64FFDF"/>
+                                            </ColorAnimationUsingKeyFrames.KeyFrames>
+
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+
+                    <Border Width="700"
+                        Height="25"
+                        Margin="75,15,0,0"
+                        CornerRadius="20">
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BrushBorder2_2" Color="#383660"/>
+                        </Border.Background>
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="Border.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Color"
+                                                                      Storyboard.TargetName="BrushBorder2_2"
+                                                                      Duration="0:0:4"
+                                                                      FillBehavior="Stop"
+                                                                      RepeatBehavior="Forever">
+                                            <ColorAnimationUsingKeyFrames.KeyFrames>
+                                                <LinearColorKeyFrame KeyTime="0:0:1.5" Value="#FF64FFDF"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:2.5" Value="#FF612386"/>
+                                                <LinearColorKeyFrame KeyTime="0:0:3.5" Value="#383660"/>
+                                            </ColorAnimationUsingKeyFrames.KeyFrames>
+
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+
+
+    </Grid>
+</Window>
